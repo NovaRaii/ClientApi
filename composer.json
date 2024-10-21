@@ -1,8 +1,7 @@
 {
-	"autoload": {
-        "psr-4": {
-            "App\\": "src/"          
-        },
-        "files": ["tfpdf/tfpdf.php"]
+"autoload":{
+    "psr-4": {
+        "App\\": "src/"
     }
-}	
+}
+}
