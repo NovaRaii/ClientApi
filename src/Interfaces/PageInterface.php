@@ -1,14 +1,13 @@
 <?php
-
 namespace App\Interfaces;
 
-interface PafeeInterface
+interface PageInterface
 {
     static function head();
 
     static function nav();
 
-    static function footer();
+    static  function footer();
 
     static function tableHead();
 
@@ -16,7 +15,5 @@ interface PafeeInterface
 
     static function table(array $entities);
 
-    static function searchBar();
+    static function searchbar();
 }
-
-?>

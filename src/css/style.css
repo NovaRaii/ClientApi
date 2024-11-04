@@ -1,0 +1,16 @@
+.flex {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button-group {
+    display: flex;
+}
+
+.inline-form {
+    margin-right: 5px;
+}
+
+.inline-form:last-child {
+    margin-right: 0;
+}   
