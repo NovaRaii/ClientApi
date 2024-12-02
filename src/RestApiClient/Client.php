@@ -97,14 +97,6 @@ class Client //implements ClientInterface
         return json_decode($response, TRUE);
     }
 
-    public function searchCounties($keyword)
-{
-    $counties = $this->get('counties')['data'];
-    return array_filter($counties, function($county) use ($keyword) {
-        return (stripos($county['name'], $keyword) !== false) || (string)$county['id'] === $keyword;
-    });
-}
-
 }
 
 

@@ -14,12 +14,12 @@ abstract class AbstractPage implements PageInterface
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="css\style.css">
+            <link rel="stylesheet" href="style.css">
             <title>REST API Ügyfél</title>
             
             <!-- Script -->
             <script src="js/jquery-3.7.1.js" type="text/javascript"></script>
-            <script src="js/javascript.js" type="text/javascript"></script>
+            <script src="js/app.js" type="text/javascript"></script>
         </head>';
     }
 
@@ -55,14 +55,14 @@ abstract class AbstractPage implements PageInterface
     abstract static function editor();
 
     static function searchbar()
-{
-    echo '
-    <form method="post" action="">
-        <input type="text" name="keyword" placeholder="Keresés" />
-        <input type="submit" name="btn-search" value="Search" />
-    </form>
-    <br>';
-}
+    {
+        echo '
+        <form action="search.php" method="get">
+    <input type="text" name="keyword" />
+    <input type="submit" value="Search" />
+        </form>
+        <br>';
+    }
 
 
 }

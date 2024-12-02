@@ -1,14 +1,15 @@
 <?php
 namespace App\Html;
- 
-use App\Html\AbstractPage;  
- 
-class PageCounties extends AbstractPage
+
+use App\Html\AbstractPage;
+
+class PageCities extends AbstractPage
 {
-    static function table(array $entities){
-        echo '<h1>Megyék</h1>';
+    static function table(array $cities)
+    {
+        echo '<h1>Városok</h1>';
         self::searchBar();
-        echo'<table id="counties-table">';
+        echo '<table id="cities-table">';
         self::tableHead();
         echo '
         <style>
@@ -58,75 +59,45 @@ class PageCounties extends AbstractPage
         </div>
 
         </div>';
-        self::tableBody($entities);
-        echo "</table>";
+        self::tableBody($cities);
+        echo '</table>';
     }
- 
+
     static function tableHead()
     {
         echo '
         <thead>
             <tr>
-                <th class="id-col">#</th>
-                <th>Megnevezés</th>
-                <th style="float: right; display: flex">
-                    Művelet&nbsp;
-                    <button id="myBtn">+</button>';
-        echo'
-                </th>
-            </tr>
-            <tr id="editor" class="hidden">';
-            echo '
+                <th class="id-col">ID</th>
+                <th>Város neve</th>
             </tr>
         </thead>';
     }
- 
-    static function editor() {
-        echo '
-        <form name="county-editor" method="post" action="">
-        <input type="hidden" id="id" name="id">
-        <input type="search" id="name" name="name" placeholder="Megye" required>
-        <button type="submit" id="btn-save-county" name="btn-save-county" title="Ment"><i class ="fa fa-save"></i></button>
-        <button type="button" id="btn-cancel-county" title="Mégse"><i class="fa fa-times"></i></button>
-    </form>';
-    }
 
-    static function editForm($county) {
-        echo "
-        <h2>Megye szerkesztése</h2>
-        <form method='post' action=''>
-            <input type='hidden' name='id' value='{$county['id']}'>
-            <input type='text' name='name' value='{$county['name']}' required>
-            <button type='submit' name='btn-update-county'>Mentés</button>
-            <button type='submit' name='btn-cancel'>Mégse</button>
-        </form>";
-    }
- 
-    static function tableBody(array $entities) {
-        
+    static function tableBody(array $cities)
+    {
         echo '<tbody>';
-        $i = 0;
-        foreach ($entities as $entity) {
-        echo "
-        <tr class='" . (++$i % 2 ? "odd" : "even") . "'>
-            <td>{$entity['id']}</td>
-            <td>{$entity['name']}</td>
-            <td class='flex'>
+        foreach ($cities as $city) {
+            echo "
+            <tr>
+                <td>{$city['id']}</td>
+                <td>{$city['city']}</td>
+                <td class='flex'>
             <form method='post' action='' class='inline-form'>
                                 <button type='submit'
-                                    name='btn-edit-county'
-                                    value='{$entity['id']}'
+                                    name='btn-edit-city'
+                                    value='{$city['id']}'
                                     title='Szerkesztés'>
                                     <i class='fa fa-edit'></i>
                                 </button>
                             </form>
                 <form method='post' action=''>
-                    <button type='submit' id='btn-del-county-{$entity['id']}' name='btn-del-county' value='{$entity['id']}' title='Töröl'>
+                    <button type='submit' id='btn-del-city-{$city['id']}' name='btn-del-city' value='{$city['id']}' title='Töröl'>
                         <i class='fa fa-trash'></i>
                     </button>
                 </form>
             </td>
-        </tr>";
+            </tr>";
         }
         echo '</tbody>';
         echo '<script>
@@ -152,6 +123,39 @@ class PageCounties extends AbstractPage
         </script>';
     }
 
+    static function dropdown(array $entities){
+        echo '<h1>Városok</h1>';
+        echo '<form method="post" action="">'; 
+        echo '<select name="county_id" required>'; 
+        foreach ($entities as $entity) {
+            echo "<option value='{$entity['id']}'>{$entity['name']}</option>";
+        }
+        echo '</select>';
+        echo '<button type="submit" name="btn-cities">Submit</button>'; 
+        echo '</form>';
+    }
 
+    static function editForm($city) {
+        echo "
+        <h2>Megye szerkesztése</h2>
+        <form method='post' action=''>
+            <input type='hidden' name='id' value='{$city['id']}'>
+            <input type='text' name='name' value='{$city['city']}' required>
+            <button type='submit' name='btn-update-city'>Mentés</button>
+            <button type='submit' name='btn-cancel'>Mégse</button>
+        </form>";
+    }
+
+    static function editor() {
+        echo '
+        <form name="city-editor" method="post" action="">
+        <input type="hidden" id="id" name="id">
+        <input type="search" id="name" name="name" placeholder="Város" required>
+        <button type="submit" id="btn-save-city" name="btn-save-county" title="Ment"><i class ="fa fa-save"></i></button>
+        <button type="button" id="btn-cancel-city" title="Mégse"><i class="fa fa-times"></i></button>
+    </form>';
+    }
 }
-?>
+
+
+
