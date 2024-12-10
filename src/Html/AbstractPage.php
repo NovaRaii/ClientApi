@@ -19,7 +19,6 @@ abstract class AbstractPage implements PageInterface
             
             <!-- Script -->
             <script src="js/jquery-3.7.1.js" type="text/javascript"></script>
-            <script src="js/app.js" type="text/javascript"></script>
         </head>';
     }
 

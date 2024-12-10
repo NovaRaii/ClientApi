@@ -92,15 +92,15 @@ class PageCounties extends AbstractPage
     }
 
     static function editForm($county) {
-        echo "
-        <h2>Megye szerkesztése</h2>
-        <form method='post' action=''>
-            <input type='hidden' name='id' value='{$county['id']}'>
-            <input type='text' name='name' value='{$county['name']}' required>
-            <button type='submit' name='btn-update-county'>Mentés</button>
-            <button type='submit' name='btn-cancel'>Mégse</button>
-        </form>";
-    }
+      echo "
+      <h2>Megye szerkesztése</h2>
+      <form method='post' action=''>
+          <input type='hidden' name='id' value='{$county['id']}'>
+          <input type='text' name='name' value='{$county['name']}' required>
+          <button type='submit' name='btn-update-county'>Mentés</button>
+          <button type='submit' name='btn-cancel'>Mégse</button>
+      </form>";
+  }
  
     static function tableBody(array $entities) {
         
