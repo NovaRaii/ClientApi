@@ -1,0 +1,128 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    width: 100%; /* Full width */
+    text-align: center; /* Center text in nav */
+}
+
+nav button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+nav button:hover {
+    background-color: #004494;
+}
+
+/* Table Styles */
+table {
+    width: 80%; /* Set table width to 80% */
+    max-width: 600px; /* Maximum width for the table */
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.5); 
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* Center modal vertically */
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%; /* Modal width */
+    max-width: 500px; /* Maximum width for the modal */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 20px;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* Button Styles */
+button {
+    background-color: #007BFF; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Input Styles */
+input[type="text"], input[type="search"] {
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 18px); /* Full width minus padding */
+}
+
+/* Alphabet Buttons */
+.alphabet-buttons {
+    margin: 20px 0;
+}
+
+.alphabet-buttons button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.alphabet-buttons button:hover {
+    background-color: #0056b3;
+}

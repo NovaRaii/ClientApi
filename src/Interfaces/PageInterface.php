@@ -1,4 +1,7 @@
 <?php
+ /**
+ * @author Praszna Koppány V.
+ **/
 namespace App\Interfaces;
 
 interface PageInterface
